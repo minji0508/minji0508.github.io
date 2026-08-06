@@ -1,10 +1,747 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <!-- Theme Made By www.w3schools.com -->
+    <title>Bootstrap Theme Company Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        :root {
+            --bg: #fcfcff;
+            --white: #ffffff;
+
+            --pink: #ff4fa3;
+            --soft-pink: #ffb7da;
+
+            --cyan: #35e7e0;
+            --soft-cyan: #bffbf7;
+
+            --purple: #a98bff;
+
+            --text: #292735;
+            --sub-text: #777484;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #fcfcff;
+            color: #292735;
+        }
+        h2 {
+            font-size: 24px;
+            text-transform: uppercase;
+            color: #303030;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            color: #303030;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+        .jumbotron {
+            background:
+                    radial-gradient(circle at 15% 30%,
+                    rgba(255, 79, 163, 0.18),
+                    transparent 30%),
+                    radial-gradient(circle at 85% 25%,
+                    rgba(53, 231, 224, 0.20),
+                    transparent 30%),
+                    radial-gradient(circle at 70% 80%,
+                    rgba(169, 139, 255, 0.15),
+                    transparent 25%),
+                    #fcfcff;
+
+            color: var(--text);
+
+            padding: 140px 25px 110px;
+
+            font-family: 'Montserrat', sans-serif;
+        }
+        .jumbotron h1 {
+            font-size: 58px;
+            font-weight: 700;
+            letter-spacing: 3px;
+
+            background: linear-gradient(
+                    90deg,
+                    var(--pink),
+                    var(--purple),
+                    var(--cyan)
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+
+            text-shadow: 0 0 25px rgba(255, 79, 163, 0.12);
+        }
+
+        .jumbotron p {
+            color: var(--sub-text);
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+        .container-fluid {
+            padding: 60px 50px;
+        }
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+        .logo-small {
+            font-size: 50px;
+
+            background: linear-gradient(
+                    135deg,
+                    var(--pink),
+                    var(--purple),
+                    var(--cyan)
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .logo {
+            color: #f4511e;
+            font-size: 200px;
+        }
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            margin-bottom: 10px;
+        }
+        .carousel-control.right, .carousel-control.left {
+            background-image: none;
+            color: #f4511e;
+        }
+        .carousel-indicators li {
+            border-color: #f4511e;
+        }
+        .carousel-indicators li.active {
+            background-color: #f4511e;
+        }
+        .item h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            font-weight: 400;
+            font-style: italic;
+            margin: 70px 0;
+        }
+        .item span {
+            font-style: normal;
+        }
+        .panel {
+            border: 1px solid #f4511e;
+            border-radius:0 !important;
+            transition: box-shadow 0.5s;
+        }
+        .panel:hover {
+            box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+        }
+        .panel-footer .btn:hover {
+            border: 1px solid #f4511e;
+            background-color: #fff !important;
+            color: #f4511e;
+        }
+        .panel-heading {
+            color: #fff !important;
+            background-color: #f4511e !important;
+            padding: 25px;
+            border-bottom: 1px solid transparent;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+        .panel-footer {
+            background-color: white !important;
+        }
+        .panel-footer h3 {
+            font-size: 32px;
+        }
+        .panel-footer h4 {
+            color: #aaa;
+            font-size: 14px;
+        }
+        .panel-footer .btn {
+            margin: 15px 0;
+            background-color: #f4511e;
+            color: #fff;
+        }
+        .navbar {
+            margin-bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 9999;
+
+            border: none;
+            border-bottom: 1px solid rgba(255, 79, 163, 0.15);
+
+            font-size: 12px !important;
+            line-height: 1.42857143 !important;
+            letter-spacing: 2px;
+
+            border-radius: 0;
+            font-family: 'Montserrat', sans-serif;
+
+            box-shadow: 0 4px 20px rgba(255, 79, 163, 0.08);
+        }
+        .navbar li a,
+        .navbar .navbar-brand {
+            color: var(--text) !important;
+        }
+        .navbar-nav li a:hover,
+        .navbar-nav li.active a {
+            color: var(--pink) !important;
+            background-color: transparent !important;
+        }
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #fff !important;
+        }
+        footer .glyphicon {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #f4511e;
+        }
+        .slideanim {visibility:hidden;}
+        .slide {
+            animation-name: slide;
+            -webkit-animation-name: slide;
+            animation-duration: 1s;
+            -webkit-animation-duration: 1s;
+            visibility: visible;
+        }
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+        @-webkit-keyframes slide {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0%);
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .col-sm-4 {
+                text-align: center;
+                margin: 25px 0;
+            }
+            .btn-lg {
+                width: 100%;
+                margin-bottom: 35px;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .logo {
+                font-size: 150px;
+            }
+        }
+        .jumbotron .btn {
+            background: linear-gradient(
+                    90deg,
+                    var(--pink),
+                    var(--purple)
+            );
+
+            color: white;
+            border: none;
+            border-radius: 0 25px 25px 0;
+
+            font-weight: 600;
+
+            box-shadow: 0 5px 20px rgba(255, 79, 163, 0.25);
+
+            transition: 0.3s;
+        }
+
+        .jumbotron .btn:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                    0 8px 25px rgba(255, 79, 163, 0.35),
+                    0 0 20px rgba(53, 231, 224, 0.15);
+
+            color: white;
+        }
+        .jumbotron input {
+            border: 1px solid #eee;
+            border-radius: 25px 0 0 25px;
+            padding-left: 20px;
+            box-shadow: 0 5px 20px rgba(169, 139, 255, 0.08);
+        }
+
+        .jumbotron input:focus {
+            border-color: var(--soft-pink);
+            box-shadow: 0 0 15px rgba(255, 79, 163, 0.15);
+        }
+        .navbar .navbar-brand {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 2px;
+
+            background: linear-gradient(
+                    90deg,
+                    var(--pink),
+                    var(--purple),
+                    var(--cyan)
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        #about h2 {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 3px;
+
+            background: linear-gradient(
+                    90deg,
+                    var(--pink),
+                    var(--purple)
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .school-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 40px 25px;
+            border-radius: 25px;
+            text-align: center;
+
+            border: 1px solid rgba(255, 79, 163, 0.15);
+
+            box-shadow:
+                    0 10px 35px rgba(255, 79, 163, 0.12),
+                    0 0 30px rgba(53, 231, 224, 0.08);
+        }
+
+        .school-card .glyphicon {
+            font-size: 35px;
+            color: var(--pink);
+            margin-bottom: 15px;
+        }
+
+        .school-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .school-card p {
+            color: var(--sub-text);
+            margin-top: 10px;
+        }
+
+        .school-card .major {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+
+            background: linear-gradient(
+                    90deg,
+                    var(--soft-pink),
+                    var(--soft-cyan)
+            );
+
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        #services h2 {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 3px;
+
+            background: linear-gradient(
+                    90deg,
+                    var(--pink),
+                    var(--purple),
+                    var(--cyan)
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        #services > h4 {
+            color: var(--sub-text);
+            font-size: 13px;
+            letter-spacing: 4px;
+        }
+        #services .col-sm-4 {
+            padding: 35px 25px;
+            margin-bottom: 20px;
+
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(255, 79, 163, 0.12);
+            border-radius: 22px;
+
+            box-shadow:
+                    0 8px 30px rgba(255, 79, 163, 0.08),
+                    0 0 25px rgba(53, 231, 224, 0.05);
+
+            transition: 0.3s;
+        }
+
+        #services .col-sm-4:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                    0 15px 35px rgba(255, 79, 163, 0.16),
+                    0 0 25px rgba(53, 231, 224, 0.12);
+        }
+
+        #services .col-sm-4 h4 {
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--text);
+            margin-top: 15px;
+        }
+        #portfolio h2 {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 3px;
+
+            background: linear-gradient(
+                    90deg,
+                    var(--pink),
+                    var(--purple),
+                    var(--cyan)
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        #portfolio > h4 {
+            color: var(--sub-text);
+            font-size: 13px;
+            letter-spacing: 4px;
+        }
+        .learning-card {
+            position: relative;
+            min-height: 220px;
+            padding: 40px 30px !important;
+
+            background: rgba(255, 255, 255, 0.9) !important;
+            border: 1px solid rgba(255, 79, 163, 0.12) !important;
+            border-radius: 24px !important;
+
+            box-shadow:
+                    0 10px 30px rgba(255, 79, 163, 0.08),
+                    0 0 25px rgba(53, 231, 224, 0.06);
+
+            transition: 0.3s;
+        }
+
+        .learning-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                    0 15px 35px rgba(255, 79, 163, 0.15),
+                    0 0 25px rgba(53, 231, 224, 0.12);
+        }
+
+        .learning-number {
+            font-size: 45px;
+            font-weight: 800;
+
+            background: linear-gradient(
+                    135deg,
+                    var(--pink),
+                    var(--purple),
+                    var(--cyan)
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .learning-card h3 {
+            font-size: 19px;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+
+        .learning-card p {
+            color: var(--sub-text);
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+        /* CONTACT */
+        #contact {
+            padding: 90px 50px;
+            background: #fcfcff;
+        }
+
+        #contact h2 {
+            color: #a98bff;
+            margin-bottom: 10px;
+        }
+
+        #contact > h4 {
+            color: #777484;
+            letter-spacing: 5px;
+            font-size: 13px;
+            margin-bottom: 45px;
+        }
+
+        .contact-box {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 45px 50px;
+
+            background: #ffffff;
+            border: 1px solid #ffe4f1;
+            border-radius: 25px;
+
+            box-shadow: 0 15px 35px rgba(255, 79, 163, 0.08);
+        }
+
+        .contact-box > p:first-child {
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .contact-box p {
+            color: #292735;
+            margin: 18px 0;
+        }
+
+        .contact-box .glyphicon {
+            margin-right: 10px;
+
+            background: linear-gradient(135deg, #ff4fa3, #a98bff, #35e7e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            font-size: 20px;
+        }
+    </style>
 </head>
-<body>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#myPage">MINJI</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#services">SKILLS</a></li>
+                <li><a href="#portfolio">LEARNING</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron text-center">
+    <h1>SEO MINJI</h1>
+
+    <h3 class="hero-job">
+        DEPARTMENT OF SOFTWARE COMMUNICATION
+    </h3>
+</div>
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>About ME</h2><br>
+            <h4>
+                안녕하세요, 소프트웨어를 공부하며 다양한 개발 경험을 쌓고 있는 서민지입니다.
+            </h4>
+
+            <p>안녕하세요, 소프트웨어를 공부하며 다양한 개발 경험을 쌓고 있는 서민지입니다.</p>
+            <p>새로운 기술을 배우고 직접 구현하며 개발 역량을 넓혀가고 있습니다.</p>
+            <br>
+        </div>
+        <div class="col-sm-4">
+            <div class="school-card">
+                <span class="glyphicon glyphicon-education"></span>
+
+                <h3>HONGIK UNIVERSITY</h3>
+
+                <p>홍익대학교 세종캠퍼스</p>
+
+                <span class="major">
+        Department of Software Communication
+    </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+        <h2>SKILLS</h2>
+        <h4>TECH STACK</h4>
+
+        <div class="row">
+            <div class="col-sm-4">
+            <span class="glyphicon glyphicon-off logo-small"></span>
+            <h4>JAVA</h4>
+                <p>OOP · Class · Inheritance</p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-heart logo-small"></span>
+            <h4>C</h4>
+            <p>Pointer · Memory · Dynamic Allocation</p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-lock logo-small"></span>
+            <h4>HTML / CSS</h4>
+            <p>Web Structure · Responsive Design</p>
+        </div>
+    </div>
+    <br><br>
+    <div class="row">
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-leaf logo-small"></span>
+            <h4>JAVASCRIPT</h4>
+            <p>Event · Basic Interaction</p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-certificate logo-small"></span>
+            <h4>PYTHON</h4>
+            <p>Data Analysis · Machine Learning</p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-wrench logo-small"></span>
+            <h4>GIT</h4>
+            <p>Commit · Branch · Merge</p>
+        </div>
+    </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<!-- Container (Portfolio Section) -->
+<div id="portfolio" class="container-fluid text-center bg-grey">
+    <h2>LEARNING</h2>
+    <h4>WHAT I'VE LEARNED</h4>
+
+    <div class="row text-center">
+        <!-- 01 -->
+        <div class="col-sm-4">
+            <div class="thumbnail learning-card">
+                <div class="learning-number">01</div>
+                <h3>Java & Spring</h3>
+                <p>Java · Spring MVC · JUnit</p>
+            </div>
+        </div>
+
+        <!-- 02 -->
+        <div class="col-sm-4">
+            <div class="thumbnail learning-card">
+                <div class="learning-number">02</div>
+                <h3>Web Development</h3>
+                <p>HTML · CSS · JavaScript</p>
+            </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="col-sm-4">
+            <div class="thumbnail learning-card">
+                <div class="learning-number">03</div>
+                <h3>Database</h3>
+                <p>MySQL · SQL</p>
+            </div>
+        </div>
+    </div>
+    <br>
+</div>
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid text-center bg-grey">
+    <h2>CONTACT</h2>
+    <h4>GET IN TOUCH</h4>
+
+    <div class="contact-box">
+        <p>궁금한 점이 있다면 편하게 연락해주세요.</p>
+
+        <p>
+            <span>✉️</span>
+            <a href="mailto:seominji5827@gmail.com">Email</a>
+        </p>
+
+        <p>
+            <span>🔗</span>
+            <a href="https://github.com/minji0508" target="_blank">GitHub</a>
+        </p>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function(){
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+
+        $(window).scroll(function() {
+            $(".slideanim").each(function(){
+                var pos = $(this).offset().top;
+
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
+                }
+            });
+        });
+    })
+</script>
 
 </body>
 </html>
