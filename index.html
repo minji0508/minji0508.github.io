@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <style>
         :root {
             --bg: #fcfcff;
@@ -116,6 +117,7 @@
             padding: 0 0 15px 0;
             border: none;
             border-radius: 0;
+            margin: 15px;
         }
         .thumbnail img {
             width: 100%;
@@ -212,7 +214,6 @@
         }
         footer .glyphicon {
             font-size: 20px;
-            margin-bottom: 20px;
             color: #f4511e;
         }
         .slideanim {visibility:hidden;}
@@ -394,19 +395,26 @@
             font-size: 13px;
             letter-spacing: 4px;
         }
-        #services .col-sm-4 {
-            padding: 35px 25px;
-            margin-bottom: 20px;
+        #services .row{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:30px;
+        }
 
-            background: rgba(255, 255, 255, 0.85);
-            border: 1px solid rgba(255, 79, 163, 0.12);
-            border-radius: 22px;
+        #services .col-sm-4{
+            width:31%;
+            padding:35px 25px;
+
+            background:rgba(255,255,255,.85);
+            border:1px solid rgba(255,79,163,.12);
+            border-radius:22px;
 
             box-shadow:
-                    0 8px 30px rgba(255, 79, 163, 0.08),
-                    0 0 25px rgba(53, 231, 224, 0.05);
+                    0 8px 30px rgba(255,79,163,.08),
+                    0 0 25px rgba(53,231,224,.05);
 
-            transition: 0.3s;
+            transition:.3s;
         }
 
         #services .col-sm-4:hover {
@@ -614,17 +622,17 @@
 
         <div class="row">
             <div class="col-sm-4">
-            <span class="glyphicon glyphicon-off logo-small"></span>
+                <i class="fa-brands fa-java logo-small"></i>
             <h4>JAVA</h4>
                 <p>OOP · Class · Inheritance</p>
         </div>
         <div class="col-sm-4">
-            <span class="glyphicon glyphicon-heart logo-small"></span>
+            <i class="fa-solid fa-code logo-small"></i>
             <h4>C</h4>
             <p>Pointer · Memory · Dynamic Allocation</p>
         </div>
         <div class="col-sm-4">
-            <span class="glyphicon glyphicon-lock logo-small"></span>
+            <i class="fa-brands fa-html5 logo-small"></i>
             <h4>HTML / CSS</h4>
             <p>Web Structure · Responsive Design</p>
         </div>
@@ -632,17 +640,17 @@
     <br><br>
     <div class="row">
         <div class="col-sm-4">
-            <span class="glyphicon glyphicon-leaf logo-small"></span>
+            <i class="fa-brands fa-js logo-small"></i>
             <h4>JAVASCRIPT</h4>
             <p>Event · Basic Interaction</p>
         </div>
         <div class="col-sm-4">
-            <span class="glyphicon glyphicon-certificate logo-small"></span>
+            <i class="fa-brands fa-python logo-small"></i>
             <h4>PYTHON</h4>
             <p>Data Analysis · Machine Learning</p>
         </div>
         <div class="col-sm-4">
-            <span class="glyphicon glyphicon-wrench logo-small"></span>
+            <i class="fa-brands fa-git-alt logo-small"></i>
             <h4>GIT</h4>
             <p>Commit · Branch · Merge</p>
         </div>
