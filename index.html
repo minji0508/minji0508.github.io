@@ -556,6 +556,26 @@
 
             font-size: 20px;
         }
+
+        @media screen and (max-width:768px){
+
+            #services .row{
+                display:flex;
+                flex-direction:column;
+                align-items:center;
+                gap:20px;
+            }
+
+            #services .col-sm-4{
+                flex: 0 0 90% !important;
+                max-width: 380px !important;
+                width: 90% !important;
+
+                margin:20px 0 !important;
+                float:none;
+            }
+
+        }
     </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -597,7 +617,6 @@
             <h4>
                 안녕하세요, 소프트웨어를 공부하며 다양한 개발 경험을 쌓고 있는 서민지입니다.
             </h4>
-
             <p>새로운 기술을 배우고 직접 구현하며 개발 역량을 넓혀가고 있습니다.</p>
             <br>
         </div>
